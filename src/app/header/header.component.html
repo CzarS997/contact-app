@@ -1,0 +1,78 @@
+<!-- <div class="container my-4"> -->
+
+    <!-- <p class="font-weight-bold">Use dropdown component to provide a submenu for your navbar. See the examples of proper implementation.</p>
+
+    <p><strong>Detailed documentation and more examples you can find in our <a href="https://mdbootstrap.com/docs/jquery/navigation/navbar/"
+          target="_blank">Bootstrap Navbar Docs</a> and <a href="https://mdbootstrap.com/docs/jquery/components/dropdowns/"
+          target="_blank">Bootstrap Dropdown Docs</a></strong></p>
+
+    <hr class="my-4"> -->
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+
+      <!-- Navbar brand -->
+      
+      <div class="logo">
+        <img src="../../assets/booked.png" alt="logo" id="logoPic">
+        <span class="brand">Contacts</span>
+      </div>
+        
+      <app-about *ngIf="dataStorage.aboutOpen"></app-about>
+
+      <!-- Collapse button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="basicExampleNav">
+
+        <!-- Links -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" (click)="onAccounts()">Accounts
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Access</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="seeAbout()">About</a>
+          </li>
+          <!-- Dropdown -->
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">Operations</a>
+              <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink1">
+                <a class="dropdown-item" href="#">Logout</a>
+                <a class="dropdown-item" href="#">Fetch Accounts</a>
+                <a class="dropdown-item" href="#">Save Accounts</a>
+              </div>
+            </li>
+
+          <!-- Dropdown -->
+          <li class="nav-item dropdown" style="display:none;">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">Dropdown 2</a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink2">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+
+        </ul>
+        <!-- Links -->
+
+
+      </div>
+      <!-- Collapsible content -->
+
+    </nav>
+    <!--/.Navbar-->
+

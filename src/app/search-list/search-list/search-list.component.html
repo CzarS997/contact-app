@@ -1,0 +1,35 @@
+<hr>
+<div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="showNotify === 2">
+    <strong>Added!</strong> New contact has been added
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="onCloseNotify()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="showNotify === 0">
+    <strong>Rejected!</strong> No action has been taken
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="onCloseNotify()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="alert alert-primary alert-dismissible fade show" role="alert" *ngIf="showNotify === 1">
+    <strong>Edited!</strong> Contact has been edited properly
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="onCloseNotify()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<div class="md-form active-pink-2 mb-3">
+    <div class="md-form active-pink active-pink-2 mb-0 mt-0">
+        <div class="d-flex flex-row">
+            <input class="form-control" type="text" placeholder="Type name ..." aria-label="Search" [(ngModel)]="filtStatus">
+            <button class="btn btn-success" (click)="onAddNew()">Add</button>  
+        </div>
+    </div>
+</div>
+
+<ul class="md-form list-group mt-3">
+    <app-search-item
+    *ngFor="let contactsEl of contacts | filter:filtStatus; let i = index"
+    [contact]="contactsEl"
+    [index]="i">
+    </app-search-item>
+</ul>

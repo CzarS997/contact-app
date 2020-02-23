@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Overpass&display=swap');
+
+/***** Top menu *****/
+ 
+.navbar {
+    background: rgb(122, 98, 98);
+    -o-transition: all .6s;
+    -moz-transition: all .6s;
+    -webkit-transition: all .6s;
+    -ms-transition: all .6s;
+    transition: all .6s;
+    backface-visibility: hidden;
+}
+ 
+.navbar.navbar-no-bg {
+    background: #555;
+    background: rgba(0, 0, 0, 0.2);
+}
+ 
+.navbar-dark .navbar-nav {
+    font-size: 15px;
+    color: #fff;
+    text-transform: uppercase;
+}
+ 
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+    color: rgba(255, 255, 255, 0.8);
+    border: 0;
+}
+ 
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #fff;
+}
+ 
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: #fff;
+    outline: 0;
+}
+ 
+.navbar-expand-md .navbar-nav .nav-link {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.navbar-nav.ml-auto{
+    margin-right: 3rem;
+}
+.navbar-brand {
+    width: 105px;
+   // background: url(../img/logo.png) left center no-repeat;
+    border: 0;
+    text-indent: -99999px;
+}
+.logo{
+
+    .brand{
+        text-transform: uppercase;
+        cursor: pointer;
+        margin-left: 0.5rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        font-family: 'Overpass', 'sans-serif';
+        color: rgb(192, 247, 191);
+    }
+}
+
+#logoPic{
+    width: 2rem;
+    height: 2rem;
+    padding-bottom: 0.3rem;
+}
+
+.nav-link{
+    cursor: pointer;
+}
