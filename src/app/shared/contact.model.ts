@@ -1,6 +1,6 @@
 export class Contact{
 
-    logsInfo: object;
+    public logsInfo: object;
     constructor(public name: string, public digits: number){
         
         this.name = name;

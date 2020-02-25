@@ -27,6 +27,7 @@ export class SearchListComponent implements OnInit, OnDestroy {
   ngOnInit() {
    
     this.contacts = this.searchServ.getContacts();
+    console.log(this.contacts);
 
     this.notifySub = this.searchServ.displayNotify
     .subscribe(
@@ -41,9 +42,7 @@ export class SearchListComponent implements OnInit, OnDestroy {
         this.contacts = contacts;
       }
     )
-
-    // this.contacts.sort();
-    // this.contacts.reverse();
+    
   }
 
   onAddNew(){

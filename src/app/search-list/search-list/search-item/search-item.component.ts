@@ -20,7 +20,6 @@ export class SearchItemComponent implements OnInit {
    this.dummy = this.searchServ.getContact(this.index).logsInfo;
 
     console.log(this.searchServ.getContact(this.index).logsInfo);
-
   }
 
   showLogs(){
@@ -32,7 +31,8 @@ export class SearchItemComponent implements OnInit {
   onEditAccount(){
     console.log(`From onEditAccount: ${this.index}`);
     this.searchServ.sendInfo(this.index);
-    //this.router.navigate(['/edit, index']);
+    this.searchServ.reverseArr();
+    
   }
 
   onDeleteContact(){

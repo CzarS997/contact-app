@@ -21,8 +21,6 @@ private contacts: Contact[] = [
 ];
 
 
-
-
 getContacts(){
 
     return this.contacts.sort().reverse().slice();
@@ -66,6 +64,7 @@ addContact(contact: Contact){
 }
 
 updateContact(index: number, newContact: Contact){
+    console.log(`New contact: ${newContact}`);
     this.contacts.reverse()[index] = newContact;
     this.contacts = this.sortArr(this.contacts);
     this.contactChanged.next(this.contacts.slice());

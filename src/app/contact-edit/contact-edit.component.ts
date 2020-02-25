@@ -67,8 +67,16 @@ export class ContactEditComponent implements OnInit, OnDestroy {
     let temp = this.searchServ.getContacts();
     if(this.editMode){
 
-    this.searchServ.updateContact(temp.length-this.editedContactIndex-1, this.contactForm.value);
-    console.log(temp.length-this.editedContactIndex-1);
+      //issue with 'Contact' type -> cant send logsInfo to update
+    // let tempContact: Contact = new Contact(this.contactForm.value.name, parseInt(this.contactForm.value.digits));
+    // let toLogs = this.editedContact.logsInfo;
+    // tempContact.logsInfo = toLogs;  
+      this.editedContact.name = this.contactForm.value.name;
+      this.editedContact.digits = this.contactForm.value.digits;
+
+
+    this.searchServ.updateContact(temp.length-this.editedContactIndex-1, this.editedContact);
+    
     this.router.navigate(['../../'], {relativeTo: this.route});
     this.searchServ.displayNotify.next(NotifyTypes.Edited);
 
