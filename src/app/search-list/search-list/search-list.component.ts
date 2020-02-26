@@ -27,8 +27,6 @@ export class SearchListComponent implements OnInit, OnDestroy {
   ngOnInit() {
    
     this.contacts = this.searchServ.getContacts();
-    console.log(this.contacts);
-
     this.notifySub = this.searchServ.displayNotify
     .subscribe(
       (value: NotifyTypes) => {
@@ -46,7 +44,6 @@ export class SearchListComponent implements OnInit, OnDestroy {
   }
 
   onAddNew(){
-    console.log('Not implemented yet');
     this.searchServ.startedEditing.next(-1);
     this.router.navigate(['/new']);
   }

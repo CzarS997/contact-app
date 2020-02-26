@@ -1,6 +1,6 @@
 import {Contact} from '../shared/contact.model';
 import { Subject, BehaviorSubject } from 'rxjs';
-import { Injectable } from '@angular/core';
+import { Injectable, ɵSWITCH_TEMPLATE_REF_FACTORY__POST_R3__ } from '@angular/core';
 import {NotifyTypes} from '../shared/notifyTypes';
 
 @Injectable({providedIn: 'root'})
@@ -55,6 +55,7 @@ addContact(contact: Contact){
     let x1 = new Contact(contact.name, numb);
     let temp1: Contact[] = [];
     temp1 = this.contacts;
+    x1.logsInfo = undefined;
     temp1.push(x1);
 
     temp1 = this.sortArr(temp1);
@@ -64,7 +65,8 @@ addContact(contact: Contact){
 }
 
 updateContact(index: number, newContact: Contact){
-    console.log(`New contact: ${newContact}`);
+    
+
     this.contacts.reverse()[index] = newContact;
     this.contacts = this.sortArr(this.contacts);
     this.contactChanged.next(this.contacts.slice());

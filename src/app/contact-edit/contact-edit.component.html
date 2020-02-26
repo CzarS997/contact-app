@@ -4,14 +4,14 @@
         <div class="col-md-12">
             <hr>
                 <div class="form-group">
-                    <label for="name">Name</label>
+                    <label for="name">Name <i *ngIf="contactForm.controls.name.status !== 'VALID'" style="color: red;"> Invalid!</i></label>
                     <input type="text" id="name"
                     formControlName="name" 
                     class="form-control">
             </div>
             <hr>
                 <div class="form-group">
-                    <label for="digits">Digits</label>
+                    <label for="digits">Digits <i *ngIf="contactForm.controls.digits.status !== 'VALID'" style="color: red;"> Invalid!</i></label>
                     <input type="tel" id="digits"
                     formControlName="digits" class="form-control">  
             </div>

@@ -17,26 +17,17 @@ export class SearchItemComponent implements OnInit {
   constructor(private router: Router, private searchServ: SearchListService) { }
 
   ngOnInit() {
-   this.dummy = this.searchServ.getContact(this.index).logsInfo;
-
-    console.log(this.searchServ.getContact(this.index).logsInfo);
-  }
-
-  showLogs(){
-
-    console.log('Right now, it doesnt work xD');
-
   }
 
   onEditAccount(){
-    console.log(`From onEditAccount: ${this.index}`);
+   
     this.searchServ.sendInfo(this.index);
     this.searchServ.reverseArr();
     
   }
 
   onDeleteContact(){
-    console.log(this.index);
+  
     this.searchServ.deleteContact(this.index);
   }
 

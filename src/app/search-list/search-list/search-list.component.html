@@ -32,4 +32,9 @@
     [contact]="contactsEl"
     [index]="i">
     </app-search-item>
+    <div class="card" *ngIf="(contacts | filter:filtStatus).length === 0">
+      <div class="card-body d-flex flex-row justify-content-center">
+        <p class="card-text">No contacts has been found <i class='far fa-frown'></i></p>
+      </div>
+    </div>
 </ul>

@@ -1,13 +1,13 @@
   <div>
 <li class="list-group-item d-flex justify-content-between align-items-center" id="liContact">{{contact.name | uppercase}}, {{contact.digits}}
        <div class="badges-container">
-        <span class="badge badge-pill badge-primary" attr.href="{{'#' + 'el' + index}}" (click)="showLogs()" data-toggle="collapse"
-         aria-expanded="false" attr.aria-controls="{{'el' + index}}">Call log</span>
+        <span class="badge badge-pill badge-primary" attr.href="{{'#' + 'el' + index}}" data-toggle="collapse"
+         aria-expanded="false" attr.aria-controls="{{'el' + index}}" *ngIf="contact.logsInfo">Call log</span>
         <span class="badge badge-pill badge-success" [routerLink]="['/edit', index]" (click)="onEditAccount()">Edit</span>
         <span class="badge badge-pill badge-danger" (click)="onDeleteContact()">X</span>
       </div>
     </li>
-    <div class="collapse" attr.id="{{'el' + index}}">
+    <div class="collapse" attr.id="{{'el' + index}}" *ngIf="contact.logsInfo">
       <div class="card card-body">
         <ul class="list-group list-group-flush">
           <!-- <li class="list-group-item d-flex flex-row justify-content-between align-content-center">{{dummy.call1[0]}}<span>{{(dummy.call1[1] - dummy.call1[1]%60)/60 + 'm'}} {{dummy.call1[1]%60 + 's'}}</span></li>

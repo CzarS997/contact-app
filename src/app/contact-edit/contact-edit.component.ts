@@ -25,11 +25,12 @@ export class ContactEditComponent implements OnInit, OnDestroy {
 
 
   ngOnInit() {
+    this.searchServ.reverseArr();
     this.subcription = this.searchServ.startedEditing
     .subscribe(
   
       (index: number) => {
-        console.log('Subscribed');
+        
         this.editedContactIndex = index;
         if(index !== -1) {
           this.editMode = true;
@@ -62,15 +63,12 @@ export class ContactEditComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(){
-    console.log(`The current index is: ${this.editedContactIndex}`);
+    
 
     let temp = this.searchServ.getContacts();
+
     if(this.editMode){
 
-      //issue with 'Contact' type -> cant send logsInfo to update
-    // let tempContact: Contact = new Contact(this.contactForm.value.name, parseInt(this.contactForm.value.digits));
-    // let toLogs = this.editedContact.logsInfo;
-    // tempContact.logsInfo = toLogs;  
       this.editedContact.name = this.contactForm.value.name;
       this.editedContact.digits = this.contactForm.value.digits;
 
@@ -90,16 +88,15 @@ export class ContactEditComponent implements OnInit, OnDestroy {
   }
 
   onEditApproved(){
-    console.log(`Status:`);
-    
+   
     this.searchServ.updateContact(this.searchServ.getContacts().length-this.editedContactIndex, this.contactForm.value);
     this.searchServ.displayNotify.next(NotifyTypes.Edited);
 
   }
 
   onDiscard(){
-   // let temp = this.editMode? '../../' : '../';
-   console.log("On discard activated");
+
+    console.log(this.contactForm);
    this.searchServ.displayNotify.next(NotifyTypes.Discard);
    
    this.searchServ.reverseArr();
@@ -109,10 +106,6 @@ export class ContactEditComponent implements OnInit, OnDestroy {
    }else {
      this.router.navigate(['../'], {relativeTo: this.route});
    }
-    console.log('Nothing changed');
-   
-   
-  
 
   }
 
